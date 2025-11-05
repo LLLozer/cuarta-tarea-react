@@ -1,4 +1,5 @@
 import { useForm } from "../hooks/useForm";
+import { Navigate } from "react-router";
 
 export const Register = () => {
   const { form, handleChange, handleReset } = useForm({
@@ -10,6 +11,7 @@ export const Register = () => {
   });
 
   const handleSubmit = () => {
+    <Navigate to="/login" />;
     handleReset();
   };
 
@@ -47,7 +49,7 @@ export const Register = () => {
           onChange={handleChange}
         />
         <br />
-        <button onClick={() => console.log(form)}>Register</button>
+        <button onClick={handleSubmit}>Register</button>
         <br />
       </form>
     </>
