@@ -8,8 +8,10 @@ import { PrivateRoutes } from "./PrivateRoutes";
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="login" element={<Login />} />
-      <Route path="register" element={<Register />} />
+      <Route element={<PublicRoutes />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Route>
       <Route element={<PrivateRoutes />}>
         <Route path="/home" element={<HomePage />} />
       </Route>

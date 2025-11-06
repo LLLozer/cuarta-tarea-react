@@ -1,15 +1,18 @@
-import { Navigate, Outlet } from "react-router";
+import { useNavigate, Outlet } from "react-router";
 import { Navbar } from "../components/Navbar";
 
 export const PrivateRoutes = () => {
+  const navigate = useNavigate();
   const isLogged = localStorage.getItem("isLogged");
+  console.log(isLogged);
 
-  return isLogged ? (
-    <>
-      <Navbar />
-      <Outlet />
-    </>
-  ) : (
-    <Navigate to="/login" />
-  );
+  if (isLogged !== true) {
+    navigate("/login");
+    return (
+      <>
+        <Navbar />
+        <Outlet />
+      </>
+    );
+  }
 };

@@ -1,7 +1,8 @@
 import { useForm } from "../hooks/useForm";
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const { form, handleChange, handleReset } = useForm({
     username: "",
     password: "",
@@ -12,7 +13,7 @@ export const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     localStorage.setItem("isLogged", true);
-    <Navigate to="/home" />;
+    navigate("/home");
     console.log(form);
     handleReset();
   };

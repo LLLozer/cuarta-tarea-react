@@ -1,13 +1,12 @@
 import { Link } from "react-router";
+import { Logout } from "./Logout";
 
 export const Navbar = () => {
   return (
     <nav>
       <Link to="/home">Home</Link>
       <br />
-      <Link to="/about">Logout</Link>
-      <br />
-      <Link to="/login">Login</Link>
+      <Logout />
     </nav>
   );
 };

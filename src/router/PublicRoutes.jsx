@@ -1,6 +1,18 @@
-import { Navigate, Outlet } from "react-router";
+import { useNavigate, Outlet } from "react-router";
+import { Navbar } from "../components/Navbar";
 
 export const PublicRoutes = () => {
-  // const isLogged = localStorage.getItem("isLogged");
-  // return !isLogged ? <Outlet /> : <Navigate to="/home" />;
+  const navigate = useNavigate();
+
+  const isLogged = localStorage.getItem("isLogged");
+
+  if (!isLogged) {
+    navigate("/home");
+    return (
+      <>
+        <Navbar />
+        <Outlet />
+      </>
+    );
+  }
 };
