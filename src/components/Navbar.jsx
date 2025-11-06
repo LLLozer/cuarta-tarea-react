@@ -3,7 +3,7 @@ import { Logout } from "./Logout";
 
 export const Navbar = () => {
   return (
-    <nav>
+    <nav className="d-flex flex-column">
       <Link to="/home">Home</Link>
       <br />
       <Logout />

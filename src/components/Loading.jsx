@@ -1,5 +1,10 @@
-import hate from "../assets/hate.jpg";
+import giphy from "../assets/giphy.gif";
 
 export const Loading = () => {
-  return <img src={hate} />;
+  return (
+    <>
+      <h1>Cargando...</h1>
+      <img src={giphy} />
+    </>
+  );
 };

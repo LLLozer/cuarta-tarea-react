@@ -18,7 +18,7 @@ export const Register = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="d-flex justify-content-center">
         <input
           type="text"
           name="username"

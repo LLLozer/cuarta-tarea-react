@@ -19,7 +19,10 @@ export const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="d-flex justify-content-center flex-column"
+    >
       <input
         type="text"
         name="username"

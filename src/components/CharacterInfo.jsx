@@ -9,19 +9,22 @@ export const CharacterInfo = () => {
 
   return (
     <>
-      <h1>Los simpsons API</h1>
-      <h2>Personajes</h2>
+      <h1 className="d-flex justify-content-center">Los simpsons API</h1>
+      <h2 className="d-flex justify-content-center">Personajes</h2>
       {isLoading ? (
         <Loading />
       ) : (
         <>
-          <h3>{data?.name}</h3>
-          <img
-            src={`https://cdn.thesimpsonsapi.com/500${data?.portrait_path}`}
-            alt="img"
-          />
-          <br />
-          <p>{data?.description}</p>
+          <div className="border border-3">
+            <h3 className="d-flex justify-content-center">{data?.name}</h3>
+            <img
+              className="mx-auto d-block"
+              src={`https://cdn.thesimpsonsapi.com/500${data?.portrait_path}`}
+              alt="img"
+            />
+            <br />
+            <p className="text-center">{data?.description}</p>
+          </div>
         </>
       )}
       <br />
